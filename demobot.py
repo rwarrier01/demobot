@@ -5,11 +5,11 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # When people visit the home page '/' use the hello_world function
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/ncss')
+@app.route('/ncss', methods=['GET','POST'])
 def ncss():
     return 'Welcome to NCSS'
 
@@ -22,7 +22,7 @@ def greet_person():
     # This bot says hi to every name it gets sent!
     return f'Hi {name}!'
 
-@app.route('/weather')
+@app.route('/weather', methods=['GET','POST'])
 def weather():
     temp = int(request.values.get('temp'))
     if temp > 30:
