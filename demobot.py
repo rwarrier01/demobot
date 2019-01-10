@@ -16,19 +16,19 @@ def ncss():
 # You can access demobot’s greet command via /greet
 @app.route('/greet', methods=['GET','POST'])
 def greet_person():
-    # Get the value of the 'name' query parameter
+    # Get the value of the 'text' query parameter
     # request.values is a dictionary (cool!)
-    name = request.values.get('name')
+    text = request.values.get('text')
     # This bot says hi to every name it gets sent!
-    return f'Hi {name}!'
+    return f'Hi {text}!'
 
 @app.route('/weather', methods=['GET','POST'])
 def weather():
-    temp = int(request.values.get('temp'))
+    temp = int(request.values.get('text'))
     if temp > 30:
         return "It's so hot!"
     else:
-        return f'The temperature is {temp} degrees'
+        return f'The temperature is {text} degrees'
 
 if __name__ == '__main__':
     # Start the web server! dd
