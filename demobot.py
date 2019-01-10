@@ -29,7 +29,7 @@ def weather():
     if temp > 30:
         return "It's so hot!"
     else:
-        return f'The temperature is {temp}'
+        return f'The temperature is {temp} degrees'
 
 if __name__ == '__main__':
     # Start the web server! dd
